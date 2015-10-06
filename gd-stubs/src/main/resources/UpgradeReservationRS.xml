@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+	<soap:Header>
+		<OGHeader transactionID="193126" timeStamp="2005-03-15T14:30:50.934768-04:00" primaryLangID="E" xmlns="http://webservices.micros.com/og/4.3/Core/">
+			<Origin entityID="WEST" systemType="ORS"/>
+			<Destination entityID="WEST" systemType="WEB"/>
+		</OGHeader>
+		<wsa:Action>http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpgradeReservationResponse</wsa:Action>
+		<wsa:MessageID>urn:uuid:4b8ac5e8-6536-482d-8d55-825b073d6616</wsa:MessageID>
+		<wsa:RelatesTo>urn:uuid:e11f5485-32db-40f0-a13e-8d4422e4e4a2</wsa:RelatesTo>
+		<wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+	</soap:Header>
+	<soap:Body>
+		<UpgradeReservationResponse xmlns="http://webservices.micros.com/ows/5.1/Reservation.wsdl">
+			<Result resultStatusFlag="SUCCESS"/>
+		</UpgradeReservationResponse>
+	</soap:Body>
+</soap:Envelope>

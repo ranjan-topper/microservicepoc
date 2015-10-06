@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <soap:Header>
+    <OGHeader transactionID="1429696" timeStamp="2009-03-12T13:59:55.640625-04:00" primaryLangID="E" xmlns="http://webservices.micros.com/og/4.3/Core/">
+      <Origin entityID="TI" systemType="ORS" />
+      <Destination entityID="WEST" systemType="WEB" />
+    </OGHeader>
+    <wsa:Action>http://webservices.micros.com/ows/5.1/Reservation.wsdl#UpdatePackagesResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:84268034-4137-4ab8-83c9-19acdc0651cc</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:e3f59568-a724-4ee6-a9a3-752612982285</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+  </soap:Header>
+  <soap:Body>
+    <UpdatePackagesResponse xmlns="http://webservices.micros.com/ows/5.1/Reservation.wsdl">
+      <Result resultStatusFlag="SUCCESS" />
+      <BookedPackageList>
+        <PackageDetails xmlns="http://webservices.micros.com/og/4.3/HotelCommon/">
+          <PackageInfo packageCode="CRIB">
+            <Amount currencyCode="USD" decimals="2">6.36</Amount>
+            <Description>
+              <Text xmlns="http://webservices.micros.com/og/4.3/Common/">
+                <TextElement>Baby Crib</TextElement>
+              </Text>
+            </Description>
+          </PackageInfo>
+          <ExpectedCharges>
+            <PackageCharge>
+              <PackageCode>CRIB</PackageCode>
+              <ValidDates>
+                <StartDate>2009-04-01T00:00:00</StartDate>
+                <EndDate>2009-04-01T00:00:00</EndDate>
+              </ValidDates>
+              <UnitAmount currencyCode="USD" decimals="2">6.36</UnitAmount>
+              <Quantity>2</Quantity>
+              <Tax currencyCode="USD" decimals="2">0.64</Tax>
+              <TotalAmount currencyCode="USD" decimals="2">14</TotalAmount>
+            </PackageCharge>
+            <PackageCharge>
+              <PackageCode>CRIB</PackageCode>
+              <ValidDates>
+                <StartDate>2009-04-02T00:00:00</StartDate>
+                <EndDate>2009-04-02T00:00:00</EndDate>
+              </ValidDates>
+              <UnitAmount currencyCode="USD" decimals="2">6.36</UnitAmount>
+              <Quantity>2</Quantity>
+              <Tax currencyCode="USD" decimals="2">0.64</Tax>
+              <TotalAmount currencyCode="USD" decimals="2">14</TotalAmount>
+            </PackageCharge>
+          </ExpectedCharges>
+        </PackageDetails>
+      </BookedPackageList>
+    </UpdatePackagesResponse>
+  </soap:Body>
+</soap:Envelope>

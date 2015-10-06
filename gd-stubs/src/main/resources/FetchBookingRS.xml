@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <soap:Header>
+    <OGHeader transactionID="0329878907" timeStamp="2009-03-13T15:48:16.071875-04:00" primaryLangID="E" xmlns="http://webservices.micros.com/og/4.3/Core/">
+      <Origin entityID="TI" systemType="ORS" />
+      <Destination entityID="WEST" systemType="WEB" />
+    </OGHeader>
+    <wsa:Action>http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchBookingResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:0ddb456b-96dc-46c8-a92e-b4ff2ca51c32</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:a50d57d1-f9f7-4d51-a739-81e9dce9ffeb</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+  </soap:Header>
+  <soap:Body>
+    <FetchBookingResponse xmlns:r="http://webservices.micros.com/og/4.3/Reservation/" xmlns:c="http://webservices.micros.com/og/4.3/Common/" xmlns:hc="http://webservices.micros.com/og/4.3/HotelCommon/" xmlns="http://webservices.micros.com/ows/5.1/Reservation.wsdl">
+      <Result resultStatusFlag="SUCCESS" />
+      <HotelReservation reservationStatus="CHANGED" marketSegment="CP" sourceCode="WCWEB" onBehalfFlag="false" remoteCo="true" allowPreRegisteration="true" totalCreditCardSurcharges="80">
+        <r:UniqueIDList>
+          <c:UniqueID type="INTERNAL">4627011</c:UniqueID>
+          <c:UniqueID type="INTERNAL" source="RESVID">1918736</c:UniqueID>
+        </r:UniqueIDList>
+        <r:RoomStays>
+          <hc:RoomStay>
+            <hc:RatePlans>
+              <hc:RatePlan ratePlanCode="BED" suppressRate="false" ratePlanName="BED">
+                <hc:RatePlanDescription>
+                  <hc:Text>&lt;html&gt;
+  &lt;head&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;b&gt;&lt;font size="24"&gt;&lt;i&gt;Florida Residents Rate&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color="#ff00ff"&gt;
+ avail. ONLY to residents of Florida. Proof of residency is required upon 
+    check-in. - comm. at 10%&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color="#00ff00"&gt; not 
+    applicable to airmiles&lt;/font&gt; &lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color="#800000"&gt; available 
+    Thu-Sun&lt;/font&gt; &lt;font color="#800080"&gt;- Guests travelling on rate 2SDOQR 
+    will be entitled to 15% off breakfast in EPIC or York's Kitchen (one 
+    discount per room, per day). &lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</hc:Text>
+                </hc:RatePlanDescription>
+                <hc:AdditionalDetails>
+                  <hc:AdditionalDetail detailType="CancelPolicy">
+                    <hc:AdditionalDetailDescription>
+                      <hc:Text>Cancel By 10-APR-09</hc:Text>
+                    </hc:AdditionalDetailDescription>
+                  </hc:AdditionalDetail>
+                  <hc:AdditionalDetail detailType="TaxInformation">
+                    <hc:AdditionalDetailDescription>
+                      <hc:Text>Tax Included Accommodation </hc:Text>
+                    </hc:AdditionalDetailDescription>
+                  </hc:AdditionalDetail>
+                  <hc:AdditionalDetail detailType="MarketingInformation">
+                    <hc:AdditionalDetailDescription>
+                      <hc:Text>Thank you for booking WEST-SEFIVE.</hc:Text>
+                    </hc:AdditionalDetailDescription>
+                  </hc:AdditionalDetail>
+                  <hc:AdditionalDetail detailType="DepositPolicy">
+                    <hc:AdditionalDetailDescription>
+                      <hc:Text>A deposit of 400.000 is due by 07-APR-09 in order to guarantee your reservation.</hc:Text>
+                    </hc:AdditionalDetailDescription>
+                  </hc:AdditionalDetail>
+                </hc:AdditionalDetails>
+                <hc:DepositRequired>
+                  <hc:DepositAmount decimals="3">400</hc:DepositAmount>
+                  <hc:DueDate>2009-04-07</hc:DueDate>
+                </hc:DepositRequired>
+              </hc:RatePlan>
+            </hc:RatePlans>
+            <hc:RoomTypes>
+              <hc:RoomType roomTypeCode="KNG" numberOfUnits="1" roomTypeName="King">
+                <hc:RoomTypeDescription>
+                  <hc:Text>&lt;html&gt;
+  &lt;head&gt;
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+      &lt;b&gt;Sefive King NS &lt;/b&gt; &lt;b&gt;&lt;font color="#008000"&gt;&lt;i&gt;Traditional 
+      guestroom, elegant, comfortable, ~decor, 250 sq ft, high-speed internet&lt;br&gt;&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;
+
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</hc:Text>
+                </hc:RoomTypeDescription>
+                <hc:RoomTypeShortDescription>
+                  <hc:Text>This is a King NS room.</hc:Text>
+                </hc:RoomTypeShortDescription>
+              </hc:RoomType>
+            </hc:RoomTypes>
+            <hc:RoomRates>
+              <hc:RoomRate roomTypeCode="KNG" ratePlanCode="BED" suppressRate="false">
+                <hc:Rates>
+                  <hc:Rate>
+                    <hc:Base currencyCode="USD" decimals="3">400</hc:Base>
+                  </hc:Rate>
+                </hc:Rates>
+              </hc:RoomRate>
+            </hc:RoomRates>
+            <hc:GuestCounts isPerRoom="true">
+              <hc:GuestCount ageQualifyingCode="ADULT" count="1" />
+              <hc:GuestCount ageQualifyingCode="CHILD" count="0" />
+              <hc:GuestCount ageQualifyingCode="CHILDBUCKET1" count="0" />
+              <hc:GuestCount ageQualifyingCode="CHILDBUCKET2" count="0" />
+              <hc:GuestCount ageQualifyingCode="CHILDBUCKET3" count="0" />
+            </hc:GuestCounts>
+            <hc:TimeSpan>
+              <hc:StartDate>2009-04-10T00:00:00</hc:StartDate>
+              <hc:EndDate>2009-04-11T00:00:00</hc:EndDate>
+            </hc:TimeSpan>
+            <hc:Guarantee guaranteeType="GX">
+              <hc:GuaranteesAccepted>
+                <hc:GuaranteeAccepted>
+                  <hc:GuaranteeCreditCard cardType="AX">
+                    <c:cardHolderName>Cristina Boco</c:cardHolderName>
+                    <c:cardNumber>373344556677889</c:cardNumber>
+                    <c:expirationDate>2010-12-31</c:expirationDate>
+                  </hc:GuaranteeCreditCard>
+                </hc:GuaranteeAccepted>
+              </hc:GuaranteesAccepted>
+            </hc:Guarantee>
+            <hc:Payment>
+              <hc:PaymentsAccepted>
+                <hc:PaymentType>
+                  <hc:OtherPayment type="AX" />
+                </hc:PaymentType>
+              </hc:PaymentsAccepted>
+            </hc:Payment>
+            <hc:CancelTerm cancelType="Other" otherCancelType="CHANGED" />
+            <hc:HotelReference chainCode="WC" hotelCode="SEFIVE">Opera Demo Hotel, Medium</hc:HotelReference>
+            <hc:Total currencyCode="USD" decimals="3">400</hc:Total>
+            <hc:ResGuestRPHs>
+              <hc:ResGuestRPH RPH="0" />
+            </hc:ResGuestRPHs>
+            <hc:Comments>
+              <hc:Comment guestViewable="true">
+                <hc:Text>Comment 1</hc:Text>
+              </hc:Comment>
+              <hc:Comment guestViewable="true">
+                <hc:Text>Comment 2</hc:Text>
+              </hc:Comment>
+            </hc:Comments>
+            <hc:SpecialRequests>
+              <hc:SpecialRequest requestCode="COT" />
+            </hc:SpecialRequests>
+            <hc:ExpectedCharges TotalRoomRateAndPackages="363.636" TotalTaxesAndFees="36.364" TaxInclusive="true" decimals="3">
+              <hc:ChargesForPostingDate PostingDate="2009-04-10">
+                <hc:RoomRateAndPackages TotalCharges="363.636" decimals="3">
+                  <hc:Charges>
+                    <hc:Description>BASE RATE</hc:Description>
+                    <hc:Amount currencyCode="USD" decimals="3">363.636</hc:Amount>
+                  </hc:Charges>
+                </hc:RoomRateAndPackages>
+                <hc:TaxesAndFees TotalCharges="36.364" decimals="3">
+                  <hc:Charges>
+                    <hc:Description>1000 Accommodation</hc:Description>
+                    <hc:Amount currencyCode="USD" decimals="3">36.364</hc:Amount>
+                  </hc:Charges>
+                </hc:TaxesAndFees>
+              </hc:ChargesForPostingDate>
+            </hc:ExpectedCharges>
+          </hc:RoomStay>
+        </r:RoomStays>
+        <r:ResGuests>
+          <r:ResGuest resGuestRPH="0">
+            <r:Profiles>
+              <Profile languageCode="E" xmlns="http://webservices.micros.com/og/4.3/Name/">
+                <ProfileIDs>
+                  <c:UniqueID type="INTERNAL">4649260</c:UniqueID>
+                </ProfileIDs>
+                <Customer>
+                  <PersonName>
+                    <c:nameTitle>Ms</c:nameTitle>
+                    <c:firstName>Christina</c:firstName>
+                    <c:lastName>Boco</c:lastName>
+                  </PersonName>
+                </Customer>
+                <Addresses>
+                  <NameAddress addressType="HOME" otherAddressType="HOME">
+                    <c:AddressLine>310 Sony dr</c:AddressLine>
+                    <c:cityName>Naples</c:cityName>
+                    <c:stateProv>FL</c:stateProv>
+                    <c:countryCode>US</c:countryCode>
+                    <c:postalCode>34117</c:postalCode>
+                  </NameAddress>
+                </Addresses>
+              </Profile>
+              <Profile xmlns="http://webservices.micros.com/og/4.3/Name/">
+                <ProfileIDs>
+                  <c:UniqueID type="INTERNAL">1087606</c:UniqueID>
+                </ProfileIDs>
+                <Company>
+                  <CompanyName>ABB ASEA BROWN BOLVIA AND RAYMOND</CompanyName>
+                  <CompanyType>COMPANY</CompanyType>
+                  <CompanyID>596746</CompanyID>
+                </Company>
+              </Profile>
+            </r:Profiles>
+            <r:ArrivalTransport id="421" carrierCode="AA" locationCode="HEA" time="2004-01-29T14:30:00" />
+            <r:DepartureTransport type="Train" id="1421" carrierCode="DE" locationCode="RSW" time="2005-05-31T16:30:00" />
+          </r:ResGuest>
+        </r:ResGuests>
+        <r:ReservationHistory insertUser="OEDS$ADS" insertDate="2009-03-22T20:48:36" updateUser="OEDS$ADS" updateDate="2009-03-22T20:48:37" />
+      </HotelReservation>
+    </FetchBookingResponse>
+  </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+	<soap:Header>
+		<OGHeader soap:mustUnderstand="1" transactionID="000100" timeStamp="2004-03-22T16:25:01.4625-04:00" primaryLangID="E" xmlns="http://webservices.micros.com/og/4.3/Core/">
+			<Origin entityID="1P" systemType="ORS"/>
+			<Destination entityID="WEST" systemType="WEB"/>
+		</OGHeader>
+		<wsa:Action>http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchAvailableOffersResponse</wsa:Action>
+		<wsa:MessageID>urn:uuid:a4011a31-cb81-471a-ad3a-317496590055</wsa:MessageID>
+		<wsa:RelatesTo>urn:uuid:2a683591-1184-4236-8694-2547d46c424c</wsa:RelatesTo>
+		<wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+	</soap:Header>
+	<soap:Body>
+		<FetchAvailableOffersResponse xmlns="http://webservices.micros.com/ows/5.1/Reservation.wsdl">
+			<Result resultStatusFlag="SUCCESS"/>
+			<UpsellRooms>
+				<UpsellRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<RoomCategory>AST</RoomCategory>
+					<FirstAmount currencyCode="USD" decimals="2">500</FirstAmount>
+					<TotalAmount currencyCode="USD" decimals="2">500</TotalAmount>
+					<UpsellOfferId>1301</UpsellOfferId>
+					<ToRateCode>BED</ToRateCode>
+					<ToRoomCategory>MLK</ToRoomCategory>
+					<ToDescription>MLSK - Mid Level King Room</ToDescription>
+					<UpsellAmount currencyCode="USD" decimals="2">350</UpsellAmount>
+					<UpsellTotalAmount currencyCode="USD" decimals="2">350</UpsellTotalAmount>
+				</UpsellRoomInfo>
+				<UpsellRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<RoomCategory>AST</RoomCategory>
+					<FirstAmount currencyCode="USD" decimals="2">450</FirstAmount>
+					<TotalAmount currencyCode="USD" decimals="2">450</TotalAmount>
+					<UpsellOfferId>1302</UpsellOfferId>
+					<ToRateCode>BED</ToRateCode>
+					<ToRoomCategory>USK</ToRoomCategory>
+					<ToDescription>US 1 King</ToDescription>
+					<UpsellAmount currencyCode="USD" decimals="2">325</UpsellAmount>
+					<UpsellTotalAmount currencyCode="USD" decimals="2">325</UpsellTotalAmount>
+				</UpsellRoomInfo>
+				<UpsellRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<RoomCategory>AST</RoomCategory>
+					<FirstAmount currencyCode="USD" decimals="2">400</FirstAmount>
+					<TotalAmount currencyCode="USD" decimals="2">400</TotalAmount>
+					<UpsellOfferId>1303</UpsellOfferId>
+					<ToRateCode>BED</ToRateCode>
+					<ToRoomCategory>ULT</ToRoomCategory>
+					<ToDescription>Deluxe room 2 Queen beds Deluxe room 2 Queen beds Deluxe room 2 Queen beds Deluxe room 2 Queen beds</ToDescription>
+					<UpsellAmount currencyCode="USD" decimals="2">300</UpsellAmount>
+					<UpsellTotalAmount currencyCode="USD" decimals="2">300</UpsellTotalAmount>
+				</UpsellRoomInfo>
+				<UpsellRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<RoomCategory>AST</RoomCategory>
+					<FirstAmount currencyCode="USD" decimals="2">300</FirstAmount>
+					<TotalAmount currencyCode="USD" decimals="2">300</TotalAmount>
+					<UpsellOfferId>1304</UpsellOfferId>
+					<ToRateCode>BED</ToRateCode>
+					<ToRoomCategory>ULK</ToRoomCategory>
+					<ToDescription>UL 1 King</ToDescription>
+					<UpsellAmount currencyCode="USD" decimals="2">250</UpsellAmount>
+					<UpsellTotalAmount currencyCode="USD" decimals="2">250</UpsellTotalAmount>
+				</UpsellRoomInfo>
+				<UpsellRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<RoomCategory>AST</RoomCategory>
+					<FirstAmount currencyCode="USD" decimals="2">275</FirstAmount>
+					<TotalAmount currencyCode="USD" decimals="2">275</TotalAmount>
+					<UpsellOfferId>1305</UpsellOfferId>
+					<ToRateCode>BED</ToRateCode>
+					<ToRoomCategory>STKCHAN</ToRoomCategory>
+					<ToDescription>Standard King Channel Description</ToDescription>
+					<ToShortDescription>Standard King (Short Channel)</ToShortDescription>
+					<UpsellAmount currencyCode="USD" decimals="2">237.5</UpsellAmount>
+					<UpsellTotalAmount currencyCode="USD" decimals="2">237.5</UpsellTotalAmount>
+				</UpsellRoomInfo>
+				<UpsellRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<RoomCategory>AST</RoomCategory>
+					<FirstAmount currencyCode="USD" decimals="2">250</FirstAmount>
+					<TotalAmount currencyCode="USD" decimals="2">250</TotalAmount>
+					<UpsellOfferId>1306</UpsellOfferId>
+					<ToRateCode>BED</ToRateCode>
+					<ToRoomCategory>KNG</ToRoomCategory>
+					<ToDescription>King Room.</ToDescription>
+					<UpsellAmount currencyCode="USD" decimals="2">225</UpsellAmount>
+					<UpsellTotalAmount currencyCode="USD" decimals="2">225</UpsellTotalAmount>
+				</UpsellRoomInfo>
+			</UpsellRooms>
+		</FetchAvailableOffersResponse>
+	</soap:Body>
+</soap:Envelope>

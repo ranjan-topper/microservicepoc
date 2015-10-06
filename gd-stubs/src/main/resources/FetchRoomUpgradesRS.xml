@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+	<soap:Header>
+		<OGHeader transactionID="193126" timeStamp="2005-03-15T14:30:50.934768-04:00" primaryLangID="E" xmlns="http://webservices.micros.com/og/4.3/Core/">
+			<Origin entityID="WEST" systemType="ORS"/>
+			<Destination entityID="WEST" systemType="WEB"/>
+		</OGHeader>
+		<wsa:Action>http://webservices.micros.com/ows/5.1/Reservation.wsdl#FetchRoomUpgradesResponse</wsa:Action>
+		<wsa:MessageID>urn:uuid:1b3e4883-4345-40c0-9ef4-26a72d1c6421</wsa:MessageID>
+		<wsa:RelatesTo>urn:uuid:b0424623-412e-45c6-b200-3b96284e2a95</wsa:RelatesTo>
+		<wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+	</soap:Header>
+	<soap:Body>
+		<FetchRoomUpgradesResponse xmlns="http://webservices.micros.com/ows/5.1/Reservation.wsdl">
+			<Result resultStatusFlag="SUCCESS"/>
+			<UpgradeRoomList>
+				<UpgradeRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<awardType>ROOMUPGGC</awardType>
+					<fromRoomCategory>AST</fromRoomCategory>
+					<toRoomCategory>KNG</toRoomCategory>
+					<pointsRequired>500</pointsRequired>
+					<pointsAvailable>1900</pointsAvailable>
+				</UpgradeRoomInfo>
+				<UpgradeRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<awardType>ROOMUPGGC</awardType>
+					<fromRoomCategory>AST</fromRoomCategory>
+					<toRoomCategory>USK</toRoomCategory>
+					<pointsRequired>1250</pointsRequired>
+					<pointsAvailable>1900</pointsAvailable>
+				</UpgradeRoomInfo>
+				<UpgradeRoomInfo xmlns="http://webservices.micros.com/og/4.3/Reservation/">
+					<awardType>ROOMUPGGC</awardType>
+					<fromRoomCategory>AST</fromRoomCategory>
+					<toRoomCategory>ULK</toRoomCategory>
+					<pointsRequired>1500</pointsRequired>
+					<pointsAvailable>1900</pointsAvailable>
+				</UpgradeRoomInfo>
+			</UpgradeRoomList>
+		</FetchRoomUpgradesResponse>
+	</soap:Body>
+</soap:Envelope>
