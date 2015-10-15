@@ -16,9 +16,9 @@ import com.guestdriven.microservice.api.controller.GDDelApiService;
 @EnableEurekaClient
 @ComponentScan({"com.guestdriven.microservices.api","com.guestdriven.core.util"})
 @Import(GDDelApiService.class)
-public class ProductApiServiceApplication {
+public class GDApiApplication {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ProductApiServiceApplication.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GDApiApplication.class);
 
     static {
         // for localhost testing only
@@ -29,6 +29,6 @@ public class ProductApiServiceApplication {
     public static void main(String[] args) {
         LOG.info("Register MDCHystrixConcurrencyStrategy");
         //HystrixPlugins.getInstance().registerConcurrencyStrategy(new MDCHystrixConcurrencyStrategy());
-        SpringApplication.run(ProductApiServiceApplication.class, args);
+        SpringApplication.run(GDApiApplication.class, args);
     }
 }
