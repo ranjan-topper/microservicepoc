@@ -5,8 +5,9 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,14 +23,15 @@ import com.guestdriven.core.util.ServiceUtils;
 @RestController
 public class CheckinController {
 
+	private static final Logger LOG = LoggerFactory.getLogger(CheckinController.class);
+	
 	@Autowired
 	ServiceUtils util;
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ResponseEntity<DELMessageAcknowledgement> sendMessage(@RequestBody DELMessage message) {
-		System.out.println("CheckinController.sendMessage()->");
-		//util.createOkResponse(body)
-		//DELMessageAcknowledgement response = new DELMessageAcknowledgement(message.getId(), "Received", message.getPayload());
-		return util.createResponse(new DELMessageAcknowledgement(message.getId(), "Received", message.getPayload()), HttpStatus.OK);
+	public ResponseEntity<DELMessageAcknowledgement> checkin(@RequestBody DELMessage message) {
+		LOG.info("CheckinController.checkin() -> Start");
+		LOG.info("CheckinController.checkin()-> DelMessage = {}",message.getPayload());
+		return util.createOkResponse(new DELMessageAcknowledgement(message.getId(), "Received", message.getPayload()));
 	}
 }

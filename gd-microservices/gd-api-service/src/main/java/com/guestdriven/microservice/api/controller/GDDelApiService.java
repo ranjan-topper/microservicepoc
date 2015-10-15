@@ -31,50 +31,41 @@ import com.guestdriven.core.util.ServiceUtils;
 @Consumes(APPLICATION_JSON)
 public class GDDelApiService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(GDDelApiService.class);
+	private static final Logger LOG = LoggerFactory.getLogger(GDDelApiService.class);
 
-    @Autowired
-    ServiceUtils util;
+	@Autowired
+	ServiceUtils util;
 
-    @Autowired
-    @LoadBalanced
-    private RestTemplate restTemplate;
+	@Autowired
+	@LoadBalanced
+	private RestTemplate restTemplate;
 
-    @RequestMapping(value="/checkin", method=RequestMethod.POST)
-   // @HystrixCommand(fallbackMethod = "defaultCheckin")
-    public ResponseEntity<DELMessageAcknowledgement> checkin(@RequestBody DELMessage delMessage) {
+	@RequestMapping(value = "/checkin", method = RequestMethod.POST)
+	// @HystrixCommand(fallbackMethod = "defaultCheckin")
+	public ResponseEntity<DELMessageAcknowledgement> checkin(@RequestBody DELMessage delMessage) {
 
-       /* MDC.put("productId", productId);
-        LOG.info("ProductApi: User={}, Auth={}, called with productId={}", currentUser.getName(), authorizationHeader, productId);*/
-    	LOG.info("GDDelApiService.checkin() -> Start");
-    	//URI uri = util.getServiceUrl("checkin");
-    	
-    	//String url = uri.toString() + "/checkin";
-        // LOG.debug("Checkin service URL: {}", url);
+		LOG.debug("GDDelApiService.checkin() -> Start");
+		// URI uri = util.getServiceUrl("checkin");
+		// String url = uri.toString() + "/checkin";
+		// LOG.debug("Checkin service URL: {}", url);
+		HttpEntity<DELMessage> inputEntity = new HttpEntity<DELMessage>(delMessage, null);
+		ResponseEntity<DELMessageAcknowledgement> result = restTemplate.exchange("http://CHECKIN", HttpMethod.POST,
+				inputEntity, DELMessageAcknowledgement.class);
+		LOG.info("GDDelApiService.checkin() -> Start http-status: {}", result.getStatusCode());
+		LOG.debug("Checkin response body: {}", result.getBody());
+		LOG.debug("GDDelApiService.checkin() -> End");
+		return util.createResponse(result);
+	}
 
-       // URI uri = loadBalancer.choose("checkin").getUri();
-       // String url = uri.toString() + "/checkin";
-       // LOG.debug("checkin from URL: {}", uri);
-        HttpEntity<DELMessage> inputEntity = new HttpEntity<DELMessage>(delMessage, null);
-        ResponseEntity<DELMessageAcknowledgement> result = restTemplate.exchange("http://CHECKIN", HttpMethod.POST, inputEntity, DELMessageAcknowledgement.class);
-       // ResponseEntity<DELMessageAcknowledgement> result = restTemplate.postForEntity("http://checkin", delMessage, DELMessageAcknowledgement.class, null);
-        		//getForEntity("http://checkin", Message.class);
-        LOG.info("GDDelApiService.checkin() -> Start http-status: {}", result.getStatusCode());
-        LOG.debug("GetProductComposite body: {}", result.getBody());
+	/**
+	 * Fallback method for checkin()
+	 *
+	 * @param productId
+	 * @return
+	 */
+	public ResponseEntity<String> defaultCheckin(@RequestBody DELMessage delMessage) {
 
-        return util.createResponse(result);
-    }
-
-    /**
-     * Fallback method for checkin()
-     *
-     * @param productId
-     * @return
-     */
-    public ResponseEntity<String> defaultCheckin(@RequestBody DELMessage delMessage) {
-
-        //LOG.warn("Using fallback method for product-composite-service. User={}, Auth={}, called with productId={}", currentUser.getName(), authorizationHeader, productId);
-    	LOG.error("defaultCheckin();"+delMessage.getId());
-        return new ResponseEntity<String>("", HttpStatus.BAD_GATEWAY);
-    }
+		LOG.error("defaultCheckin();" + delMessage.getId());
+		return new ResponseEntity<String>("", HttpStatus.BAD_GATEWAY);
+	}
 }

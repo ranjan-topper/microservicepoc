@@ -10,7 +10,7 @@
 	<name>guestdriven api service</name>
 	<description>guestdriven api service</description>
 	<properties>
-		<start-class>com.guestdriven.microservices.api.ProductApiServiceApplication</start-class>
+		<start-class>com.guestdriven.microservices.api.GDApiApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
