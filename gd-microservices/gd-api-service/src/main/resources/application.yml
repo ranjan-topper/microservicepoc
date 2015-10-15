@@ -4,26 +4,12 @@ server:
 info:
   component: GD API Service
 
-hystrix:
-  threadpool:
-    default:
-      # Maximum number of concurrent requests when using thread pools (Default: 10)
-      coreSize: 100
-      # Maximum LinkedBlockingQueue size - -1 for using SynchronousQueue (Default: -1)
-      maxQueueSize: -1
-      # Queue size rejection threshold (Default: 5)
-      queueSizeRejectionThreshold: 5
-  command:
-    default:
-      circuitBreaker:
-        sleepWindowInMilliseconds: 30000
-        requestVolumeThreshold: 2
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutInMilliseconds: 30000
-
+ribbon:
+  maxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  ConnectTimeout: 30000
+  ReadTimeout: 30000
+  
 #ribbon:
  # ConnectTimeout: 30000
  # ReadTimeout: 30000
@@ -49,6 +35,6 @@ eureka:
 logging:
   level:
     root: WARN
-    com.guestdriven: DEBUG
+    com.guestdriven: INFO
     # Set DEBUG level on Hystrix to get an error message when a fallback method is used.
-    com.netflix.hystrix: DEBUG
+    com.netflix.hystrix: ERROR

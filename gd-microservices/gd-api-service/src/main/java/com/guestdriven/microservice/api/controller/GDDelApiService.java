@@ -44,13 +44,15 @@ public class GDDelApiService {
 	// @HystrixCommand(fallbackMethod = "defaultCheckin")
 	public ResponseEntity<DELMessageAcknowledgement> checkin(@RequestBody DELMessage delMessage) {
 
-		LOG.debug("GDDelApiService.checkin() -> Start");
-		// URI uri = util.getServiceUrl("checkin");
-		// String url = uri.toString() + "/checkin";
-		// LOG.debug("Checkin service URL: {}", url);
+		LOG.info("GDDelApiService.checkin() -> Start");
+		/* URI uri = util.getServiceUrl("checkin");
+		 String url = uri.toString() + "/checkin";
+		LOG.info("Checkin service URL: {}", url);*/
 		HttpEntity<DELMessage> inputEntity = new HttpEntity<DELMessage>(delMessage, null);
 		ResponseEntity<DELMessageAcknowledgement> result = restTemplate.exchange("http://CHECKIN", HttpMethod.POST,
 				inputEntity, DELMessageAcknowledgement.class);
+		/*ResponseEntity<DELMessageAcknowledgement> result = restTemplate.exchange(url, HttpMethod.POST,
+				inputEntity, DELMessageAcknowledgement.class);*/
 		LOG.info("GDDelApiService.checkin() -> Start http-status: {}", result.getStatusCode());
 		LOG.debug("Checkin response body: {}", result.getBody());
 		LOG.debug("GDDelApiService.checkin() -> End");

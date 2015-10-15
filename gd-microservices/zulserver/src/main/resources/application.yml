@@ -31,8 +31,19 @@ zuul:
   routes:
     gdapi: 
       path: /guestdriven/**
-#      serviceId: gdapi
+      serviceId: gdapi
       
+hystrix:
+   command:
+      default:
+         execution:
+            isolation:
+               thread:
+                 timeoutInMilliseconds: 60000
+                 
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
 
 logging:
   level:
