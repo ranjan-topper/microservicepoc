@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native
+  
+encrypt:
+  failOnError: false

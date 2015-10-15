@@ -9,6 +9,9 @@
 	<artifactId>gd-stubs</artifactId>
 	<name>gd stubs for pms</name>
 	<description>gd stubs for pms</description>
+	<properties>
+		<ratpack.version>0.9.18-SNAPSHOT</ratpack.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

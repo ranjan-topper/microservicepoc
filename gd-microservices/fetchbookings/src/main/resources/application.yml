@@ -1,0 +1,25 @@
+server:
+  port: 0
+
+info:
+  component: Fetch bookings Service
+
+service:
+  defaultMinMs: 0
+  defaultMaxMs: 0
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 3
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+  client:
+    # Default values comes from org.springframework.cloud.netflix.eurek.EurekaClientConfigBean
+    registryFetchIntervalSeconds: 5
+    instanceInfoReplicationIntervalSeconds: 5
+    initialInstanceInfoReplicationIntervalSeconds: 5
+
+logging:
+  level:
+    root: WARN
+    com.guestdriven.microservices.fetchbookings: INFO

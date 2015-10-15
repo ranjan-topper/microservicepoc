@@ -13,5 +13,6 @@
   <modules>
   	<module>gddecorator</module>
   	<module>gdvalidator</module>
+  	<module>gd-util</module>
   </modules>
 </project>

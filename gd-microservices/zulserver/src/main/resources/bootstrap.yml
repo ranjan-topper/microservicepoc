@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: edgeserver
+  cloud:
+    config:
+      uri: ${vcap.services.${PREFIX:}configserver.uri:http://localhost:8888}
+      
