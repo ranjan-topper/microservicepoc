@@ -18,6 +18,12 @@ import com.guestdriven.core.microservices.model.DELMessage;
 import com.guestdriven.core.microservices.model.DELMessageAcknowledgement;
 import com.guestdriven.core.util.ServiceUtils;
 
+/**
+ * Checkin controller
+ * 
+ * @author ZapEmp
+ */
+
 @Produces(APPLICATION_JSON)
 @Consumes(APPLICATION_JSON)
 @RestController

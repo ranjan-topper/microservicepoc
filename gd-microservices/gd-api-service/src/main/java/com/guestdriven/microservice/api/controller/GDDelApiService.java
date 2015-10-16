@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +23,9 @@ import com.guestdriven.core.microservices.model.DELMessageAcknowledgement;
 import com.guestdriven.core.util.ServiceUtils;
 
 /**
- * Created by magnus on 04/03/15.
+ * GDAPI class can be used to integrate multiple microservices
+ * 
+ * @author ZapEmp
  */
 @RestController
 @Produces(APPLICATION_JSON)
@@ -40,7 +41,7 @@ public class GDDelApiService {
 	@LoadBalanced
 	private RestTemplate restTemplate;
 
-	@RequestMapping(value = "/checkin", method = RequestMethod.POST)
+	@RequestMapping(value = "/guestdriven/checkin", method = RequestMethod.POST)
 	// @HystrixCommand(fallbackMethod = "defaultCheckin")
 	public ResponseEntity<DELMessageAcknowledgement> checkin(@RequestBody DELMessage delMessage) {
 
@@ -59,15 +60,20 @@ public class GDDelApiService {
 		return util.createResponse(result);
 	}
 
-	/**
-	 * Fallback method for checkin()
-	 *
-	 * @param productId
-	 * @return
-	 */
-	public ResponseEntity<String> defaultCheckin(@RequestBody DELMessage delMessage) {
+	@RequestMapping(value = "/guestdriven/fetchBookings", method = RequestMethod.POST)
+	// @HystrixCommand(fallbackMethod = "defaultCheckin")
+	public ResponseEntity<DELMessageAcknowledgement> fetchBookings(@RequestBody DELMessage delMessage) {
 
-		LOG.error("defaultCheckin();" + delMessage.getId());
-		return new ResponseEntity<String>("", HttpStatus.BAD_GATEWAY);
+		LOG.info("GDDelApiService.fetchBookings() -> Start");
+		HttpEntity<DELMessage> inputEntity = new HttpEntity<DELMessage>(delMessage, null);
+		ResponseEntity<DELMessageAcknowledgement> result = restTemplate.exchange("http://FETCHBOOKINGS", HttpMethod.POST,
+				inputEntity, DELMessageAcknowledgement.class);
+		/*ResponseEntity<DELMessageAcknowledgement> result = restTemplate.exchange(url, HttpMethod.POST,
+				inputEntity, DELMessageAcknowledgement.class);*/
+		LOG.info("GDDelApiService.fetchBookings() -> Start http-status: {}", result.getStatusCode());
+		LOG.debug("Fetch Bookings response body: {}", result.getBody());
+		LOG.debug("GDDelApiService.fetchBookings() -> End");
+		return util.createResponse(result);
 	}
+
 }

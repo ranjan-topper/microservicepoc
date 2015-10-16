@@ -10,6 +10,11 @@ import org.springframework.context.annotation.Import;
 
 import com.guestdriven.microservices.checkin.controller.CheckinController;
 
+/**
+ * Checkin micro service
+ * 
+ * @author ZapEmp
+ */
 @SpringBootApplication
 @EnableEurekaClient
 @ComponentScan({ "com.guestdriven.microservices.checkin", "com.guestdriven.core.util" })

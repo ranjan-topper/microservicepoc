@@ -27,11 +27,19 @@ endpoints:
 
 zuul:
   ignoredServices: "*"
-  prefix: /api
+  prefix: /api/guestdriven
   routes:
-    gdapi: 
-      path: /guestdriven/**
-      serviceId: gdapi
+    #gdapi: 
+     # path: /guestdriven/**
+      #serviceId: gdapi
+    checkin:
+      path: /checkin/**
+      serviceId: checkin
+    fetchbookings:
+      path: /fetchbookings/**
+      serviceId: fetchbookings
+      
+    
       
 hystrix:
    command:

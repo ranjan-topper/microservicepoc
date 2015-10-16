@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Import;
 
 import com.guestdriven.microservice.api.controller.GDDelApiService;
 
+/**
+ * GDApi microservice class
+ * 
+ * @author ZapEmp
+ **/
 @SpringBootApplication
 @EnableCircuitBreaker
 @EnableEurekaClient
