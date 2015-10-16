@@ -10,7 +10,8 @@
 	<name>gd stubs for pms</name>
 	<description>gd stubs for pms</description>
 	<properties>
-		<ratpack.version>0.9.18-SNAPSHOT</ratpack.version>
+		<ratpack.version>0.9.18</ratpack.version>
+		<ratpack.jackson.version>0.9.17</ratpack.jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,7 +36,7 @@
 		<dependency>
 			<groupId>io.ratpack</groupId>
 			<artifactId>ratpack-jackson</artifactId>
-			<version>${ratpack.version}</version>
+			<version>${ratpack.jackson.version}</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
